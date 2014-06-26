@@ -11,21 +11,9 @@
 |
 */
 
-// Route::get('/', function(){
-// 	return "We are home.";
-// });
-
-// Route::get('/sayHello/{name}', function($name)
-// {
-// 	if ($name == "Ashley")
-//     {
-//         return Redirect::to('/');
-//     }
-//     else
-//     {
-//         return "Hello, $name!";
-//     }
-// });
+Route::get('/', function(){
+	return "We are home.";
+});
 
 Route::get('/resume', function(){
 	return "This is my resume.";
