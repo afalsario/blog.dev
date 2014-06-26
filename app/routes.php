@@ -38,10 +38,15 @@ Route::get('/sayhello/{name}', function($name)
     }
 });
 
-Route::get('/rolldice/{guess}', function(){
+Route::get('/rolldice/{guess}', function($guess){
     $rand_num = rand(1,6);
 
-    return View::make('temp.roll-dice')->with('rand_num', $rand_num);
+    $data = array(
+        'rand_num' => $rand_num,
+        'guess' => $guess
+    );
+
+    return View::make('temp.roll-dice')->with($data);
 
 });
 
