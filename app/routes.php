@@ -11,7 +11,26 @@
 |
 */
 
-Route::get('/', function()
-{
-	return View::make('hello');
+// Route::get('/', function(){
+// 	return "We are home.";
+// });
+
+// Route::get('/sayHello/{name}', function($name)
+// {
+// 	if ($name == "Ashley")
+//     {
+//         return Redirect::to('/');
+//     }
+//     else
+//     {
+//         return "Hello, $name!";
+//     }
+// });
+
+Route::get('/resume', function(){
+	return "This is my resume.";
+});
+
+Route::get('/portfolio', function(){
+	return "This is my portfolio.";
 });
