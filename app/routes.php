@@ -12,7 +12,7 @@
 */
 
 Route::get('/', function(){
-	return View::make('temp.my-first-view');
+	return View::make('hello');
 });
 
 Route::get('/resume', function(){
