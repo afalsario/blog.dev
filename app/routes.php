@@ -11,32 +11,13 @@
 |
 */
 
-Route::get('/', function(){
-	return View::make('hello');
-});
+Route::get('/', 'HomeController@showWelcome' );
+Route::get('home', 'HomeController@home');
+Route::get('porfolio', 'HomeController@portfolio');
+Route::get('resume', 'HomeController@resume');
+Route::resource('posts', 'PostsController');
 
-Route::get('/resume', function(){
-	return View::make('resume');
-});
-
-Route::get('/portfolio', function(){
-	return View::make('portfolio');
-});
-
-Route::get('/sayhello/{name}', function($name)
-{
-    if ($name == "Ashley")
-    {
-        return Redirect::to('/');
-    }
-    else
-    {
-        $data = array(
-        	'name' => $name
-        );
-        return View::make('temp.my-first-view')->with($data);
-    }
-});
+Route::get('/sayHello/{name}', 'HomeController@sayHello');
 
 Route::get('/rolldice/{guess}', function($guess){
     $rand_num = rand(1,6);
