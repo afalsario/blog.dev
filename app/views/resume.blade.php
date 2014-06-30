@@ -3,7 +3,7 @@
 @section('topcontent')
     <style>
         #container{
-            margin:20px;
+            margin:100px;
         }
     </style>
 @stop
