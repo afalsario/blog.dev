@@ -91,7 +91,7 @@ h2>small{
         <div class="row">
             <div class="col-sm-4 col-sm-offset-2">
                 <div class="thumbnail">
-                    <img src="/img/download.png" alt="Address Book">
+                    <img src="/img/address.png" alt="Address Book">
                     <div class="caption">
                         <h3>Address Book</h3>
                         <p>This ToDo list can be used to add new items, remove finished items, upload whole lists, and save lists for future use.</p>
@@ -100,15 +100,101 @@ h2>small{
                             <a href="#" class="btn btn-default" role="button">View</a>
                         </p>
                             <!-- beginmodal -->
-                            <div class="modal fade" id="myModal1" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-                                <div class="modal-dialog">
+                            <div class="modal fade bs-example-modal-lg" id="myModal1" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+                                <div class="modal-dialog modal-lg">
                                     <div class="modal-content">
                                         <div class="modal-header">
                                             <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
-                                            <h4 class="modal-title" id="myModalLabel">Modal title</h4>
+                                            <h4 class="modal-title" id="myModalLabel">PHP and HTML Code</h4>
                                         </div>
                                         <div class="modal-body">
-                                            Address Code
+<!-- beginning address code -->
+<pre>
+class InvalidInputException extends Exception{}
+
+//-------------1. Establish DB Connection
+$dbc = new PDO('mysql:host=127.0.0.1;dbname=address_book', 'ashley', 'password');
+
+// Tell PDO to throw exceptions on error
+$dbc->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+
+try
+{
+    if(!empty($_POST['new_name']) && !empty($_POST['new_number']))
+    {
+        $stmt = $dbc->prepare('INSERT INTO contact (first_name, phone_number) VALUES (:new_name, :new_number)');
+        $stmt->bindValue(':new_name', htmlspecialchars(strip_tags($_POST['new_name'])), PDO::PARAM_STR);
+        $stmt->bindValue(':new_number', htmlspecialchars(strip_tags($_POST['new_number'])), PDO::PARAM_STR);
+        $stmt->execute();
+    }
+    else
+    {
+        throw new InvalidInputException("Please enter valid data");
+    }
+
+}
+catch (InvalidInputException $e)
+{
+    $e->getMessage();
+}
+
+$limit = 10;
+$offset = 0;
+
+//preparing data from the table so that it shows a limit of items and an offset for pagination
+$query = 'SELECT * FROM contact LIMIT :limit OFFSET :offset';
+$stmt = $dbc->prepare($query);
+$stmt->bindValue(':limit', $limit, PDO::PARAM_INT);
+$stmt->bindValue(':offset', $offset, PDO::PARAM_INT);
+$stmt->execute();
+
+//-------------5. Query for todos on current page.
+$contacts = $stmt->fetchAll(PDO::FETCH_ASSOC);
+
+?>
+&lthtml>
+&lthead>
+    &lttitle>Address Book&lt/title>
+    &ltlink rel="stylesheet" href="/css/bootstrap.min.css">
+    &ltlink rel="stylesheet" href="/css/address.css">
+&lt/head>
+&ltbody>
+    &ltdiv class="container">
+        &lth2>Address Book&lt/h2>
+        &lttable class="table table-striped">
+            &ltth>Id&lt/th>
+            &ltth>Name&lt/th>
+            &ltth>Phone Number&lt/th>
+            &ltth>Actions&lt/th>
+            &lt? foreach($contacts as $contact):?>
+                &lttr>
+                    &lttd>&lt?= $contact['con_id'] ?>&lt/td>
+                    &lttd>&lt?= $contact['first_name'] ?>&lt/td>
+                    &lttd>&lt?= $contact['phone_number'] ?>&lt/td>
+                    &lttd>
+                        &ltbutton class="btn btn-primary">View&lt/button>
+                        &ltbutton class="btn btn-danger">Remove&lt/button>
+                    &lt/td>
+                &lt/tr>
+            &lt? endforeach; ?>
+        &lt/table>
+    &lt/div>
+    &ltdiv>
+        &lth2>Add New Contact&lt/h2>
+        &lt? if(isset($e)): ?>
+        &lt?= $e->getMessage(); ?>
+        &lt? endif; ?>
+        &ltform method="POST">
+            &ltinput type="text" name="new_name" id="new_name" placeholder="Name">
+            &ltinput type="text" name="new_number" id="new_number" placeholder="Phone Number">
+            &ltbutton type="submit" class="btn btn-success">Add Contact&lt/button>
+        &lt/form>
+    &lt/div>
+
+&lt/body>
+&lt/html>
+</pre>
+<!-- end address book code -->
                                         </div>
                                         <div class="modal-footer">
                                             <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
@@ -122,12 +208,12 @@ h2>small{
             </div>
             <div class="col-sm-4">
                 <div class="thumbnail">
-                    <img src="/img/download.png" alt="Todo List">
+                    <img src="/img/todo.png" alt="Todo List">
                     <div class="caption">
                         <h3>Todo List</h3>
                         <p>This ToDo list can be used to add new items, remove finished items, upload whole lists, and save lists for future use.</p>
                         <p>
-                            <a href="#" class="btn btn-primary" role="button" data-toggle="modal" data-target=".bs-example-modal-lg">Source</a>
+                            <a href="#" class="btn btn-primary" role="button" data-toggle="modal" data-target="#myModal2">Source</a>
                             <a href="#" class="btn btn-default" role="button">View</a>
                         </p>
                         <!-- beginmodal -->
@@ -224,24 +310,94 @@ $list = $stmt->fetchAll(PDO::FETCH_ASSOC);
             </div>
             <div class="col-sm-4 col-sm-offset-2">
                 <div class="thumbnail">
-                    <img src="/img/download.png" alt="">
+                    <img src="/img/whack-a-mole.png" alt="">
                     <div class="caption">
-                        <h3>Coming Soon!</h3>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Neque doloribus enim vitae nam cupiditate eius at explicabo eaque facere iste.</p>
+                        <h3>Laser Time (Whack-a-mole)</h3>
+                        <p>This is a little bit of a twist on the classic whack-a-mole game. It was written using HTML, CSS, JavaScript, and jQuery.</p>
                         <p>
                             <a href="#" class="btn btn-primary" role="button" data-toggle="modal" data-target="#myModal3">Source</a>
                             <a href="#" class="btn btn-default" role="button">View</a>
                         </p>
                             <!-- beginmodal -->
                             <div class="modal fade" id="myModal3" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-                                <div class="modal-dialog">
+                                <div class="modal-dialog modal-lg">
                                     <div class="modal-content">
                                         <div class="modal-header">
                                             <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
-                                            <h4 class="modal-title" id="myModalLabel">Modal title</h4>
+                                            <h4 class="modal-title" id="myModalLabel">JavaScript/jQuery Code</h4>
                                         </div>
                                         <div class="modal-body">
-                                            Whack-a-mole Code
+<!-- beginning whack js -->
+<pre>&ltscript>
+    var gameTime = 60;
+    var score = 0;
+    console.log(score);
+
+    var random;
+    var randDiv;
+    var mole;
+    var gameOn;
+    var delay = 1000;
+
+    $('#gameOn').click(function(event){
+
+        gameOn =  setInterval(function(){
+
+            random = Math.round(Math.random()*8);
+            randDiv = $('.box').eq(random).click();
+            mole = $('.mole')[random];
+
+            $(mole).fadeIn(200).delay(delay).fadeOut(400);
+
+            console.log(mole);
+
+            $(mole).on('click', function(){
+                $(this).fadeOut();
+            });
+
+        }, 2000);
+
+        $('img').on('click', function(){
+            $('#score').html(score += 1);
+            switch(score){
+                case 3: delay = 800;
+                break;
+                case 8: delay = 400;
+                break;
+                case 15: delay = 100;
+                break;
+            }
+        });
+
+        continueGame();
+    });
+
+    function levelTwo(){
+        delay = 100;
+    }
+
+    function gameOver(){
+        clearInterval(gameOn);
+        $('#box').addClass('gameover').html('&ltp>GAME OVER&lt/p>').css('border', 'none');
+        $('#gameOn').click(function() {
+            location.reload();
+        });
+    }
+
+    function continueGame(){
+        setTimeout(function(){
+            gameTime--;
+            $('#timer').html(gameTime);
+
+            if (gameTime > 0) {
+                continueGame();
+            } else {
+                gameOver();
+            }
+        }, 1000);
+    }
+&lt/script></pre>
+<!-- ending whack js -->
                                         </div>
                                         <div class="modal-footer">
                                             <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
@@ -255,24 +411,92 @@ $list = $stmt->fetchAll(PDO::FETCH_ASSOC);
             </div>
             <div class="col-sm-4">
                 <div class="thumbnail">
-                    <img src="/img/download.png" alt="">
+                    <img src="/img/blog.png" alt="">
                     <div class="caption">
-                        <h3>Coming Soon!</h3>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Neque doloribus enim vitae nam cupiditate eius at explicabo eaque facere iste.</p>
+                        <h3>Blog Site</h3>
+                        <p>This is a personal blog site that was created with the Laravel framework.</p>
                         <p>
                             <a href="#" class="btn btn-primary" role="button" data-toggle="modal" data-target="#myModal4">Source</a>
                             <a href="#" class="btn btn-default" role="button">View</a>
                         </p>
                         <!-- beginmodal -->
                         <div class="modal fade" id="myModal4" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-                            <div class="modal-dialog">
+                            <div class="modal-dialog modal-lg">
                                 <div class="modal-content">
                                     <div class="modal-header">
                                         <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
-                                        <h4 class="modal-title" id="myModalLabel">Modal title</h4>
+                                        <h4 class="modal-title" id="myModalLabel">HTML Site</h4>
                                     </div>
                                     <div class="modal-body">
-                                        blog Code
+<!-- beginning blog code -->
+<xmp><nav class="mainmenu">
+    <div class="container">
+        <div class="dropdown">
+            <button type="button" class="navbar-toggle" data-toggle="dropdown">
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <ul class="dropdown-menu" role="menu" aria-labelledby="dLabel">
+                <li><a href="#head" class="active">Hello</a></li>
+                <li><a href="#about">About me</a></li>
+                <li><a href="#themes">Portfolio</a></li>
+                <li><a href="#resume">Resume</a></li>
+                <li><a href="#contact">Get in touch</a></li>
+            </ul>
+        </div>
+    </div>
+</nav>
+
+<!-- Main (Home) section -->
+<section class="section" id="head">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-10 col-lg-10 col-md-offset-1 col-lg-offset-1 text-center">
+                <h1 class="title">Ashley Falsario</h1>
+                <h2 class="subtitle">Web Developer</h2>
+                <h3 class="tagline">
+                    Aesthetician turned Web Developer
+                    <br>
+                    Writing Beautiful Code
+                </h3>
+                <p>Thank you for browsing my site. There are links to my social...</p>
+            </div> <!-- /col -->
+        </div> <!-- /row -->
+    </div>
+</section>
+
+<!-- Second (About) section -->
+<section class="section" id="about">
+    <div class="container">
+        <h2 class="text-center title">About me</h2>
+        <div class="row">
+            <div class="col-sm-4 col-sm-offset-2">
+                <h5><strong>Who is Ashley?<br></strong></h5>
+                <p>I am artsy and I am crafty. I can be a little goofy and I love live music...</p>
+                <p>I also enjoy getting out and into San Antonio and Austin. I have very rec...</p>
+            </div>
+            <div class="col-sm-4">
+                <h5><strong>Why does she code?<br></strong></h5>
+                <p>I am currently a student in Codeup, an intense 12 week programming bootcamp...</p>
+                <h5><strong>Author links<br></strong></h5>
+                <a href="https://twitter.com/_falsario">Twitter</a> /
+                <a href="www.linkedin.com/in/ashleyfalsario/">LinkedIn</a> /
+                <a href="https://github.com/afalsario">Github</a></p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Third (Works) section -->
+<section class="section" id="themes">
+    <div class="container">
+        <h2 class="text-center title">Portfolio</h2>
+        <p class="lead text-center">
+            Thank you for taking the time to browse my code!<br>
+            These are some of the projects I worked on during my time in Codeup.
+        </p></xmp>
+<!-- end blog code -->
                                     </div>
                                     <div class="modal-footer">
                                         <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
