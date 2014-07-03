@@ -1,39 +1,22 @@
 @extends('layouts.master')
 
-@section('topscript')
-<style>
-.table {
-    width: 80%;
-    margin-bottom: 21px;
-    margin-left: auto;
-    margin-right: auto;
-    background: rgba(242, 210, 188, .5);
-}
-
-h2>small{
-    color:white;
-}
-</style>
-@stop
-
 @section('content')
 
 <nav class="mainmenu">
     <div class="container">
         <div class="dropdown">
             <button type="button" class="navbar-toggle" data-toggle="dropdown"><span class="icon-bar"></span> <span class="icon-bar"></span> <span class="icon-bar"></span> </button>
-            <!-- <a data-toggle="dropdown" href="#">Dropdown trigger</a> -->
             <ul class="dropdown-menu" role="menu" aria-labelledby="dLabel">
-                <li><a href="#head" class="active">Hello</a></li>
-                <li><a href="#about">About me</a></li>
-                <li><a href="#themes">Portfolio</a></li>
-                <li><a href="#resume">Resume</a></li>
-                <li><a href="#contact">Get in touch</a></li>
+<!--                 <li><a href="#head" class="active">Hello</a></li> -->
+                <li><a class"dpdn" href="#about">About me</a></li>
+                <li><a class"dpdn" href="#themes">Portfolio</a></li>
+                <li><a class"dpdn" href="#resume">Resume</a></li>
+                <li><a class"dpdn" href="#contact">Get in touch</a></li>
+                <li><a href="http://blog.dev/posts">Blog</a></li>
             </ul>
         </div>
     </div>
 </nav>
-
 
 <!-- Main (Home) section -->
 <section class="section" id="head">
@@ -52,7 +35,7 @@ h2>small{
                     Writing Beautiful Code
                 </h3>
                 <!-- Nice place to describe your site in a sentence or two -->
-                <p>Thank you for browsing my site. There are links to my social media profiles and samples of my work.</p>
+                <h3 class="tagline">Thank you for browsing my site. There are links to my social media profiles and samples of my work.</h3>
             </div> <!-- /col -->
         </div> <!-- /row -->
     </div>
@@ -588,16 +571,14 @@ $list = $stmt->fetchAll(PDO::FETCH_ASSOC);
     </div>
 </section>
 
-@stop
-
-
-@section('bottomcontent')
-
-<!-- Load js libs only when the page is loaded. -->
-<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
-<script src="http://netdna.bootstrapcdn.com/bootstrap/3.0.3/js/bootstrap.min.js"></script>
-<script src="/js/modernizr.custom.72241.js"></script>
-<!-- Custom template scripts -->
-<script src="/js/magister.js"></script>
+<section class="section" id="blog">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-10 col-lg-10 col-md-offset-1 col-lg-offset-1 text-center">
+                <h1 class="title">Blog</h1>
+            </div>
+        </div>
+    </div>
+</section>
 
 @stop
