@@ -11,10 +11,7 @@
 |
 */
 
-Route::get('/', 'HomeController@showWelcome' );
-Route::get('home', 'HomeController@home');
-Route::get('porfolio', 'HomeController@portfolio');
-Route::get('resume', 'HomeController@resume');
+Route::get('/', 'HomeController@home' );
 Route::resource('posts', 'PostsController');
 
 Route::get('/sayHello/{name}', 'HomeController@sayHello');
