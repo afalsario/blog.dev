@@ -24,14 +24,6 @@ class HomeController extends BaseController {
 		return View::make('home');
 	}
 
-	public function resume(){
-		return View::make('resume');
-	}
-
-	public function portfolio(){
-		return View::make('portfolio');
-	}
-
 	public function sayHello($name)
 	{
         $data = array(
