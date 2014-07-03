@@ -24,10 +24,23 @@
 </head>
 
 <body class="theme-invert">
-
+    <div class="container">
+        @if(Session::has('successMessage'))
+            <div class="alert alert-success">{{{ Session::get('successMessage') }}}</div>
+        @endif
+        @if(Session::has('errorMessage'))
+            <div class="alert alert-danger">{{{ Session::get('errorMessage') }}}</div>
+        @endif
+    </div>
     @yield('content')
 
     @yield('bottomcontent')
+    <!-- Load js libs only when the page is loaded. -->
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+    <script src="http://netdna.bootstrapcdn.com/bootstrap/3.0.3/js/bootstrap.min.js"></script>
+    <script src="/js/modernizr.custom.72241.js"></script>
+    <!-- Custom template scripts -->
+    <script src="/js/magister.js"></script>
 
 </body>
 </html>
