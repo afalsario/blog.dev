@@ -1,14 +1,14 @@
-@extends('layouts.master')
+@extends('layouts.blog-master')
 
 @section('content')
 <div class="container">
     <div class="col-md-10 col-lg-10 col-md-offset-1 col-lg-offset-1 text-left">
         @if (isset($post))
             <h2 class="subtitle">Edit Post</h2>
-            {{ Form::model($post, array('action' => array('PostsController@update', $post->id), 'method' => 'PUT')) }}
+            {{ Form::model($post, array('action' => array('PostsController@update', $post->id), 'files' => true, 'method' => 'PUT')) }}
         @else
             <h2 class="subtitle">Create a new post</h2>
-            {{ Form::open(array('action' => 'PostsController@store')) }}
+            {{ Form::open(array('action' => 'PostsController@store', 'files' => true)) }}
         @endif
 
         <h3>{{ Form::label('title', 'Title') }}</h3>
@@ -19,8 +19,11 @@
         {{ Form::textarea('body') }}<br>
         {{ $errors->first('body', '<span class="help-block">:message</span></br>') }}
 
+        <h3>Upload Image</h3>
+        {{ Form::file('image') }}<br>
+
     {{ Form::submit('Save Post') }}
-    {{ Form::close() }}
+    {{ Form::close() }} <br>
     </div>
 </div>
 @stop
