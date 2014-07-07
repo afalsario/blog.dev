@@ -8,11 +8,11 @@
             <button type="button" class="navbar-toggle" data-toggle="dropdown"><span class="icon-bar"></span> <span class="icon-bar"></span> <span class="icon-bar"></span> </button>
             <ul class="dropdown-menu" role="menu" aria-labelledby="dLabel">
 <!--                 <li><a href="#head" class="active">Hello</a></li> -->
-                <li><a class"dpdn" href="#about">About me</a></li>
-                <li><a class"dpdn" href="#themes">Portfolio</a></li>
-                <li><a class"dpdn" href="#resume">Resume</a></li>
-                <li><a class"dpdn" href="#contact">Get in touch</a></li>
-                <li><a href="http://blog.dev/posts">Blog</a></li>
+                <li><a href="#about">About me</a></li>
+                <li><a href="#themes">Portfolio</a></li>
+                <li><a href="#resume">Resume</a></li>
+                <li><a href="#contact">Get in touch</a></li>
+                <li><a class="dpdn" href="http://blog.dev/posts">Blog</a></li>
             </ul>
         </div>
     </div>
