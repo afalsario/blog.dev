@@ -12,6 +12,9 @@
 */
 
 Route::get('/', 'HomeController@home' );
+Route::get('login', 'HomeController@login');
+Route::get('logout', 'HomeController@logout');
+Route::post('login', 'HomeController@doLogin');
 Route::resource('posts', 'PostsController');
 
 Route::get('/sayHello/{name}', 'HomeController@sayHello');
