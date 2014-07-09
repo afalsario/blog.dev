@@ -6,18 +6,8 @@
 
 @section('content')
 
-<form class="navbar-form navbar-left" role="search">
-  <div class="form-group">
-    {{ Form::open(array('action' => 'PostsController@index', 'method' => 'get')) }}
-        {{ Form::text('search')}}
-        {{ Form::submit('Search', ['class' => 'btn btn-primary btn-sm']) }}
-        {{ Form::close() }}
-  </div>
-</form>
-
-
     <div class="container">
-        <h2>Blog Posts</h2>
+        <h2 class="subtitle">Blog Posts</h2>
         <table class="table" style="margin:20">
             <tr>
                 <th>Title</th>
@@ -35,9 +25,9 @@
                 </tr>
             @endforeach
         </table>
-        {{ $posts->links() }}
+<div class="text-center">
+            {{ $posts->links() }}
 
-        
-
+</div>
     </div>
 @stop
