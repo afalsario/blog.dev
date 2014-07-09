@@ -2,26 +2,56 @@
 
 @section('topscript')
 <link href="/css/journal-bootstrap.min.css" rel="stylesheet" type="text/css">
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+
+  <style>
+    p
+    {
+        font-family: Wire One;
+        font-size: 40px;
+    }
+    </style>
+
 @stop
 
 @section('content')
 
-<div class="container">
-    <h2>{{{ $post->title }}}</h2>
-    <h5 class="text">Author: {{{ $post->user->email }}}</h5>
-    <h5 class="text">{{{ $post->created_at->format('l, F jS Y @ h:i A') }}}</h5>
-    <hr>
-    <p class="lead"> {{{ $post->body }}} </p>
+    <div class="container">
+        <h2 class="subtitle">{{{ $post->title }}}</h2>
+        <h5 class="text">Author: {{{ $post->user->first_name . " " . $post->user->last_name }}}</h5>
+        <h5 class="text">{{{ $post->created_at->format('l, F jS Y @ h:i A') }}}</h5>
+        <hr>
+    </div>
 
-    @if ($post->img_path)
-
-    <img src="{{{ $post->img_path }}}" class="img-responsive">
+    @if(Auth::check())
+        <div class="auth-btns">
+            <a href="{{ action('PostsController@edit', $post->id) }}" class="btn btn-md btn-primary">Edit</a>
+            <a href="#" class="deletePost btn btn-md btn-primary" data-postid="{{ $post->id }}">Delete</a>
+        </div>
+            {{ Form::open(array('action' => 'PostsController@destroy', 'id' => 'deleteForm', 'method' => 'DELETE')) }}
+            {{ Form::close() }}
     @endif
-<br>
-    <a href="{{ action('PostsController@edit', $post->id) }}"><button type="button" class="btn btn-link">Edit</button></a>
-    <button type="button" class="btn btn-link">{{ Form::open(array('action' => array('PostsController@destroy', $post->id), 'method' => 'DELETE')) }}
-        {{ Form::submit('Delete') }}</button>
-    {{ Form::close() }}
 
-</div>
+    <div class="body container">
+
+        @if ($post->img_path)
+            <img src="{{{ $post->img_path }}}" class="img-responsive">
+        @endif
+
+        <p class="lead"> {{ $post->renderBody() }} </p>
+    </div>
+
+
+    
+    <script type="text/javascript">
+       $(".deletePost").click(function() {
+           var postId = $(this).data('postid');
+           $("#deleteForm").attr('action', '/posts/' + postId);
+           if(confirm("Are you sure you want to delete post")) {
+               $('#deleteForm').submit();
+           }
+       });
+    </script>
+
 @stop
+
