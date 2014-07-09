@@ -80,7 +80,7 @@
                         <p>This ToDo list can be used to add new items, remove finished items, upload whole lists, and save lists for future use.</p>
                         <p>
                             <a href="#" class="btn btn-primary" role="button" data-toggle="modal" data-target="#myModal1">Source</a>
-                            <a href="#" class="btn btn-default" role="button">View</a>
+                            <a href="http://codeup.dev/contacts.php" class="btn btn-default" role="button" target="_blank">View</a>
                         </p>
                             <!-- beginmodal -->
                             <div class="modal fade bs-example-modal-lg" id="myModal1" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
@@ -197,7 +197,7 @@ $contacts = $stmt->fetchAll(PDO::FETCH_ASSOC);
                         <p>This ToDo list can be used to add new items, remove finished items, upload whole lists, and save lists for future use.</p>
                         <p>
                             <a href="#" class="btn btn-primary" role="button" data-toggle="modal" data-target="#myModal2">Source</a>
-                            <a href="#" class="btn btn-default" role="button">View</a>
+                            <a href="http://todo.dev/new_todo.php" class="btn btn-default" role="button" target="_blank">View</a>
                         </p>
                         <!-- beginmodal -->
                         <div class="modal fade bs-example-modal-lg" id="myModal2" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
@@ -295,11 +295,11 @@ $list = $stmt->fetchAll(PDO::FETCH_ASSOC);
                 <div class="thumbnail">
                     <img src="/img/whack-a-mole.png" alt="">
                     <div class="caption">
-                        <h3>Laser Time (Whack-a-mole)</h3>
+                        <h3>Laser Time</h3>
                         <p>This is a little bit of a twist on the classic whack-a-mole game. It was written using HTML, CSS, JavaScript, and jQuery.</p>
                         <p>
                             <a href="#" class="btn btn-primary" role="button" data-toggle="modal" data-target="#myModal3">Source</a>
-                            <a href="#" class="btn btn-default" role="button">View</a>
+                            <a href="http://codeup.dev/whack.php" class="btn btn-default" role="button" target="_blank">View</a>
                         </p>
                             <!-- beginmodal -->
                             <div class="modal fade" id="myModal3" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
@@ -397,10 +397,9 @@ $list = $stmt->fetchAll(PDO::FETCH_ASSOC);
                     <img src="/img/blog.png" alt="">
                     <div class="caption">
                         <h3>Blog Site</h3>
-                        <p>This is a personal blog site that was created with the Laravel framework.</p>
+                        <p>This is a personal blog site created with the Laravel framework. I used HTML and CSS with Twitter Bootstrap for styling.</p>
                         <p>
                             <a href="#" class="btn btn-primary" role="button" data-toggle="modal" data-target="#myModal4">Source</a>
-                            <a href="#" class="btn btn-default" role="button">View</a>
                         </p>
                         <!-- beginmodal -->
                         <div class="modal fade" id="myModal4" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
