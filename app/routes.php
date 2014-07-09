@@ -17,6 +17,10 @@ Route::get('logout', 'HomeController@logout');
 Route::post('login', 'HomeController@doLogin');
 Route::resource('posts', 'PostsController');
 
+Route::get('profile', function(){
+    return View::make('profile-settings');
+});
+
 Route::get('/sayHello/{name}', 'HomeController@sayHello');
 
 Route::get('/rolldice/{guess}', function($guess){
