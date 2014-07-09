@@ -19,7 +19,7 @@
             {{ Form::close() }}
         <ul class="nav navbar-nav navbar-right">
          @if(isset($user))
-          <li><a id="welcome">Hello, <span class="text-primary">{{$user}}</span></a></li>
+          <li><a href="{{ action('HomeController@profile') }}" id="welcome">Hello, <span class="text-primary">{{$user}}</span></a></li>
           @endif
         </ul>
   </div>
