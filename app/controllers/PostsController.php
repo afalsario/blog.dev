@@ -91,13 +91,14 @@ class PostsController extends \BaseController {
     public function update($id)
     {
         $post = new Post();
-        $post->user()->associate(Auth::user());
-        // $post->user_id = Auth::user()->id;
 
         if($id != null)
         {
             $post = Post::findOrFail($id);
         }
+
+        $post->user()->associate(Auth::user());
+        // $post->user_id = Auth::user()->id;
 
         // create the validator
         $validator = Validator::make(Input::all(), Post::$rules);
@@ -116,6 +117,7 @@ class PostsController extends \BaseController {
             $post->body = Input::get('body');
             $post->save();
 
+            // checking for valid image
             if(Input::hasFile('image') && Input::file('image')->isValid())
             {
                 $post->addUploadedImage(Input::file('image'));
@@ -143,6 +145,5 @@ class PostsController extends \BaseController {
 
         return Redirect::action('PostsController@index');
     }
-
 
 }
