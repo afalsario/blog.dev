@@ -54,7 +54,5 @@
         </div>
         @yield('content')
 
-        @yield('bottomcontent')
-
     </body>
 </html>
