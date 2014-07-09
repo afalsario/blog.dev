@@ -61,7 +61,10 @@ class HomeController extends BaseController {
         return Redirect::action('PostsController@index');
     }
 
-
+    public function profile()
+    {
+    return View::make('profile-settings');
+    }
 
 }
 
