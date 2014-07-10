@@ -35,6 +35,9 @@
                 margin-left: auto;
                 padding-left: 15px;
                 padding-right: 15px;
+                clear:both;
+                background-color: rgba(242, 210, 188, .5);
+                border: 1px solid whitesmoke;
             }
         </style>
 
