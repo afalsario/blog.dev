@@ -269,9 +269,8 @@ h2>small{
 }
 
 .auth-btns{
-    text-align: right;
-    margin-top: -90px;
-    margin-right: 150px;
+    float: right;
+    margin-top: -10px;
 }
 
 div.center
@@ -285,7 +284,15 @@ div.center
     font-family: monospace;
 }
 
+.blog-post {
+    background-color: rgba(242, 210, 188, .5);
+    border: 1px solid whitesmoke;
+    padding: 10px;
+}
 
+.post-info{
+    float:left;
+}
 
 
 /***********************************************************/
@@ -329,7 +336,7 @@ div.center
     color:#000
 }
 .theme-invert .navbar-toggle {
-    background: rgba(0, 0, 0, 0.12);
+    background: #eb6864;
 }
 .theme-invert .navbar-toggle .icon-bar {
   background: #333;
