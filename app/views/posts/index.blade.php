@@ -8,26 +8,30 @@
 
     <div class="container">
         <h2 class="subtitle">Blog Posts</h2>
-        <table class="table" style="margin:20">
-            <tr>
-                <th>Title</th>
-                <th>Creation Date</th>
-                <th></th>
-            </tr>
 
-            @foreach ($posts as $post)
-                <tr>
-                    <td class="lead">{{{ $post->title }}} </td>
-                    <td>{{{ $post->created_at->format('l jS \of F Y h:i:s A') }}}</td>
-                    <td>
-                        <a href="{{ action('PostsController@show', $post->id) }}"><button class="btn btn-primary">View</button></a>
-                    </td>
-                </tr>
-            @endforeach
-        </table>
-<div class="text-center">
+        @foreach ($posts as $post)
+            <div class="blog-post">
+                <h2 class="lead"><a href="{{ action('PostsController@show', $post->id) }}">{{{ $post->title }}}</a></h2>
+                <p>by <a href="#">{{{ $post->user->first_name . '  ' . $post->user->last_name }}}</a></p>
+                    <hr>
+                <p><span class="glyphicon glyphicon-time"></span> {{{ $post->updated_at->format('F jS, Y g:i A') }}}</p>
+                    <hr>
+                <p>{{{ $post->preview() }}}</p>
+                <a class="btn btn-primary" href="{{ action('PostsController@show', $post->id) }}">
+                    Read More
+                    <span class="glyphicon glyphicon-chevron-right"></span>
+                </a>
+            </div>
+            <br>
+        @endforeach
+
+        <div class="text-center">
             {{ $posts->links() }}
-
-</div>
+        </div>
     </div>
+
 @stop
+
+
+
+

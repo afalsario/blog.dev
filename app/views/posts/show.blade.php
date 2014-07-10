@@ -18,10 +18,11 @@
 
     <div class="container">
         <h2 class="subtitle">{{{ $post->title }}}</h2>
+        <div class="post-info">
         <h5 class="text">Author: {{{ $post->user->first_name . " " . $post->user->last_name }}}</h5>
-        <h5 class="text">{{{ $post->created_at->format('l, F jS Y @ h:i A') }}}</h5>
-        <hr>
-    </div>
+        <h5 class="text">{{{ $post->updated_at->format('F jS, Y g:i A') }}}</h5>
+      </div>
+        <br>
 
     @if(Auth::check())
         <div class="auth-btns">
@@ -31,7 +32,7 @@
             {{ Form::open(array('action' => 'PostsController@destroy', 'id' => 'deleteForm', 'method' => 'DELETE')) }}
             {{ Form::close() }}
     @endif
-
+</div>
     <div class="body container">
 
         @if ($post->img_path)
@@ -41,8 +42,6 @@
         <p class="lead"> {{ $post->renderBody() }} </p>
     </div>
 
-
-    
     <script type="text/javascript">
        $(".deletePost").click(function() {
            var postId = $(this).data('postid');
