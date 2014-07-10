@@ -1,7 +1,7 @@
 @extends('layouts.blog-master')
 
 @section('content')
-    <div class="container">
+    <div class="center">
         <h2 class="subtitle">Profile Info</h2>
         First Name: {{{ Auth::user()->first_name }}}
         <br>
