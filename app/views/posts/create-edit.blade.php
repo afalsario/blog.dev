@@ -36,11 +36,14 @@
             <h2 class="subtitle">Post Preview</h2>
             <div id="wmd-preview" class="wmd-panel wmd-preview"></div>
 
+            <hr>
+
             <h3>Upload Image</h3>
 
             {{ Form::file('image') }}
             <br>
             {{ Form::submit('Save Post', ['class' => 'btn btn-md btn-primary']) }}
+            <a class='btn btn-md btn-primary' href="{{{ action('PostsController@index')}}}">Cancel</a>
             {{ Form::close() }}
             <br>
         </div>
