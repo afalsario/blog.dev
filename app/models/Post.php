@@ -41,4 +41,9 @@ class Post extends BaseModel {
 
         return $clean_html;
     }
+
+    public function preview()
+    {
+        return substr("$this->body", 0, 200) . "...";
+    }
 }
