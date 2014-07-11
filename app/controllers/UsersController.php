@@ -67,6 +67,7 @@ class UsersController extends \BaseController {
 	 */
 	public function update($id)
 	{
+		$user = new User();
 		// create the validator
         $validator = Validator::make(Input::all(), User::$rules);
 
@@ -80,10 +81,10 @@ class UsersController extends \BaseController {
         else
         {
             // validation succeeded, create and save the post
-            $user->first_name = Input::get('first_name');
-            $user->last_name = Input::get('last_name');
-            $user->email = Input::get('email');
-            $user->save();
+            Auth::user()->first_name = Input::get('first_name');
+            Auth::user()->last_name = Input::get('last_name');
+            Auth::user()->email = Input::get('email');
+            Auth::user()->save();
 
 			return Redirect::action('HomeController@profile');
         }
