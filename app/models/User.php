@@ -23,4 +23,10 @@ class User extends BaseModel implements UserInterface, RemindableInterface {
 	 */
 	protected $hidden = array('password', 'remember_token');
 
+	//Ensure data is valid based on type and size specifications
+    public static $rules = [
+        'first_name' => 'required|max:100',
+        'email' => 'required|max:100'
+    ];
+
 }
