@@ -46,4 +46,17 @@ class Post extends BaseModel {
     {
         return substr("$this->body", 0, 200) . "...";
     }
+
+    static public function findBySlug($slug)
+    {
+        $post = self::where('slug', $slug)->first();
+        return ($post == null) ? App::abort(404) : $post;
+    }
+
+    public function setSlugAttribute($value)
+    {
+        $value = str_replace(' ', '-', trim($value));
+        $this->attributes['slug'] = strtolower($value);
+    }
+
 }
