@@ -62,9 +62,9 @@ class PostsController extends \BaseController {
      * @param  int  $id
      * @return Response
      */
-    public function show($id)
+    public function show($slug)
     {
-        $post = Post::find($id);
+        $post = Post::findBySlug($slug);
         return View::make('posts.show')->with('post', $post);
     }
 
@@ -115,6 +115,7 @@ class PostsController extends \BaseController {
             // validation succeeded, create and save the post
             $post->title = Input::get('title');
             $post->body = Input::get('body');
+            $post->slug = Input::get('title');
             $post->save();
 
             // checking for valid image
@@ -126,7 +127,7 @@ class PostsController extends \BaseController {
 
             Session::flash('successMessage', 'Action successful!');
 
-            return Redirect::action('PostsController@show', $post->id);
+            return Redirect::action('PostsController@show', $post->slug);
         }
     }
 
