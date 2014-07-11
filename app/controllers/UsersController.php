@@ -67,7 +67,26 @@ class UsersController extends \BaseController {
 	 */
 	public function update($id)
 	{
-		//
+		// create the validator
+        $validator = Validator::make(Input::all(), User::$rules);
+
+        // attempt validation
+        if ($validator->fails())
+        {
+            Session::flash('errorMessage', 'Error: Information not saved. Please enter valid data name and email.');
+            // validation failed, redirect to the post create page with validation errors and old inputs
+            return Redirect::back()->withInput()->withErrors($validator);
+        }
+        else
+        {
+            // validation succeeded, create and save the post
+            $user->first_name = Input::get('first_name');
+            $user->last_name = Input::get('last_name');
+            $user->email = Input::get('email');
+            $user->save();
+
+			return Redirect::action('HomeController@profile');
+        }
 	}
 
 
