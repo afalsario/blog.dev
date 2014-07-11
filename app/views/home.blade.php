@@ -521,7 +521,7 @@ $list = $stmt->fetchAll(PDO::FETCH_ASSOC);
 <section class="section" id="resume">
     <div class="container" style="margin:20" >
         <div>
-            <h2 class="text-center title">Ashley Falsario <small>Junior Software Developer</small></h2>
+            <h2 class="text-center title">Ashley Falsario <small>Full Stack Web Developer</small></h2>
         </div>
         <div>
             <table class="table">
