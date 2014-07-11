@@ -12,7 +12,7 @@
                 <li><a href="#themes">Portfolio</a></li>
                 <li><a href="#resume">Resume</a></li>
                 <li><a href="#contact">Get in touch</a></li>
-                <li><a class="dpdn" href="http://blog.dev/posts">Blog</a></li>
+                <li><a class="dpdn" href="http://ashleyfalsario.com/posts">Blog</a></li>
             </ul>
         </div>
     </div>

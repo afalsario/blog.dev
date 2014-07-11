@@ -12,7 +12,7 @@
 
     <div class="navbar-collapse navbar-inverse-collapse collapse" style="height: 1px;">
         <ul class="nav navbar-nav">
-            <li><a href="http://blog.dev">Home</a></li>
+            <li><a href="http://ashleyfalsario.com">Home</a></li>
             <li><a href="{{ action('PostsController@index') }}">View All Posts</a></li>
 
             @if(Auth::check())
