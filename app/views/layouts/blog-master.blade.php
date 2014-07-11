@@ -57,5 +57,7 @@
         </div>
         @yield('content')
 
+        @yield('bottomscript')
+
     </body>
 </html>
