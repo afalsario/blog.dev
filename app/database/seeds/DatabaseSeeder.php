@@ -11,7 +11,7 @@ class DatabaseSeeder extends Seeder {
 	{
 		Eloquent::unguard();
 
-		$this->call('UserTableSeeder');
+		// $this->call('UserTableSeeder');
 		$this->call('PostTableSeeder');
 	}
 
@@ -48,6 +48,7 @@ class PostTableSeeder extends Seeder {
             $posts->user_id = rand(1,2);
 	        $posts->title = "Post: $i";
 	        $posts->body = "Post $i body.";
+            $posts->slug = $posts->title;
 	        $posts->save();
     	}
     }
