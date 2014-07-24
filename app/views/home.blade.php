@@ -411,73 +411,73 @@ $list = $stmt->fetchAll(PDO::FETCH_ASSOC);
                                     </div>
                                     <div class="modal-body">
 <!-- beginning blog code -->
-<xmp><nav class="mainmenu">
-    <div class="container">
-        <div class="dropdown">
-            <button type="button" class="navbar-toggle" data-toggle="dropdown">
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-            </button>
-            <ul class="dropdown-menu" role="menu" aria-labelledby="dLabel">
-                <li><a href="#head" class="active">Hello</a></li>
-                <li><a href="#about">About me</a></li>
-                <li><a href="#themes">Portfolio</a></li>
-                <li><a href="#resume">Resume</a></li>
-                <li><a href="#contact">Get in touch</a></li>
-            </ul>
-        </div>
-    </div>
-</nav>
+<pre>&ltnav class="mainmenu">
+    &ltdiv class="container">
+        &ltdiv class="dropdown">
+            &ltbutton type="button" class="navbar-toggle" data-toggle="dropdown">
+                &ltspan class="icon-bar">&lt/span>
+                &ltspan class="icon-bar">&lt/span>
+                &ltspan class="icon-bar">&lt/span>
+            &lt/button>
+            &ltul class="dropdown-menu" role="menu" aria-labelledby="dLabel">
+                &ltli>&lta href="#head" class="active">Hello&lt/a>&lt/li>
+                &ltli>&lta href="#about">About me&lt/a>&lt/li>
+                &ltli>&lta href="#themes">Portfolio&lt/a>&lt/li>
+                &ltli>&lta href="#resume">Resume&lt/a>&lt/li>
+                &ltli>&lta href="#contact">Get in touch&lt/a>&lt/li>
+            &lt/ul>
+        &lt/div>
+    &lt/div>
+&lt/nav>
 
-<!-- Main (Home) section -->
-<section class="section" id="head">
-    <div class="container">
-        <div class="row">
-            <div class="col-md-10 col-lg-10 col-md-offset-1 col-lg-offset-1 text-center">
-                <h1 class="title">Ashley Falsario</h1>
-                <h2 class="subtitle">Web Developer</h2>
-                <h3 class="tagline">
+&lt!-- Main (Home) section -->
+&ltsection class="section" id="head">
+    &ltdiv class="container">
+        &ltdiv class="row">
+            &ltdiv class="col-md-10 col-lg-10 col-md-offset-1 col-lg-offset-1 text-center">
+                &lth1 class="title">Ashley Falsario&lt/h1>
+                &lth2 class="subtitle">Web Developer&lt/h2>
+                &lth3 class="tagline">
                     Aesthetician turned Web Developer
-                    <br>
+                    &ltbr>
                     Writing Beautiful Code
-                </h3>
-                <p>Thank you for browsing my site. There are links to my social...</p>
-            </div> <!-- /col -->
-        </div> <!-- /row -->
-    </div>
-</section>
+                &lt/h3>
+                &ltp>Thank you for browsing my site. There are links to my social...&lt/p>
+            &lt/div> &lt!-- /col -->
+        &lt/div> &lt!-- /row -->
+    &lt/div>
+&lt/section>
 
-<!-- Second (About) section -->
-<section class="section" id="about">
-    <div class="container">
-        <h2 class="text-center title">About me</h2>
-        <div class="row">
-            <div class="col-sm-4 col-sm-offset-2">
-                <h5><strong>Who is Ashley?<br></strong></h5>
-                <p>I am artsy and I am crafty. I can be a little goofy and I love live music...</p>
-                <p>I also enjoy getting out and into San Antonio and Austin. I have very rec...</p>
-            </div>
-            <div class="col-sm-4">
-                <h5><strong>Why does she code?<br></strong></h5>
-                <p>I am currently a student in Codeup, an intense 12 week programming bootcamp...</p>
-                <h5><strong>Author links<br></strong></h5>
-                <a href="https://twitter.com/_falsario">Twitter</a> /
-                <a href="www.linkedin.com/in/ashleyfalsario/">LinkedIn</a> /
-                <a href="https://github.com/afalsario">Github</a></p>
-            </div>
-        </div>
-    </div>
-</section>
+&lt!-- Second (About) section -->
+&ltsection class="section" id="about">
+    &ltdiv class="container">
+        &lth2 class="text-center title">About me&lt/h2>
+        &ltdiv class="row">
+            &ltdiv class="col-sm-4 col-sm-offset-2">
+                &lth5>&ltstrong>Who is Ashley?&ltbr>&lt/strong>&lt/h5>
+                &ltp>I am artsy and I am crafty. I can be a little goofy and I love live music...&lt/p>
+                &ltp>I also enjoy getting out and into San Antonio and Austin. I have very rec...&lt/p>
+            &lt/div>
+            &ltdiv class="col-sm-4">
+                &lth5>&ltstrong>Why does she code?&ltbr>&lt/strong>&lt/h5>
+                &ltp>I am currently a student in Codeup, an intense 12 week programming bootcamp...&lt/p>
+                &lth5>&ltstrong>Author links&ltbr>&lt/strong>&lt/h5>
+                &lta href="https://twitter.com/_falsario">Twitter&lt/a> /
+                &lta href="www.linkedin.com/in/ashleyfalsario/">LinkedIn&lt/a> /
+                &lta href="https://github.com/afalsario">Github&lt/a>&lt/p>
+            &lt/div>
+        &lt/div>
+    &lt/div>
+&lt/section>
 
-<!-- Third (Works) section -->
-<section class="section" id="themes">
-    <div class="container">
-        <h2 class="text-center title">Portfolio</h2>
-        <p class="lead text-center">
-            Thank you for taking the time to browse my code!<br>
+&lt!-- Third (Works) section -->
+&ltsection class="section" id="themes">
+    &ltdiv class="container">
+        &lth2 class="text-center title">Portfolio&lt/h2>
+        &ltp class="lead text-center">
+            Thank you for taking the time to browse my code!&ltbr>
             These are some of the projects I worked on during my time in Codeup.
-        </p></xmp>
+        &lt/p></pre>
 <!-- end blog code -->
                                     </div>
                                     <div class="modal-footer">
