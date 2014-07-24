@@ -33,6 +33,10 @@ Route::get('/rolldice/{guess}', function($guess){
 
 });
 
+Route::get('whack', function(){
+    return View::make('whack.whack-a-mole');
+});
+
 
 
 

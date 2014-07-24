@@ -80,7 +80,7 @@
                         <p>This ToDo list can be used to add new items, remove finished items, upload whole lists, and save lists for future use.</p>
                         <p>
                             <a href="#" class="btn btn-primary" role="button" data-toggle="modal" data-target="#myModal1">Source</a>
-                            <a href="http://codeup.dev/contacts.php" class="btn btn-default" role="button" target="_blank">View</a>
+                            <a href="/img/address.png" class="btn btn-default" role="button" target="_blank">Screenshot</a>
                         </p>
                             <!-- beginmodal -->
                             <div class="modal fade bs-example-modal-lg" id="myModal1" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
@@ -197,7 +197,7 @@ $contacts = $stmt->fetchAll(PDO::FETCH_ASSOC);
                         <p>This ToDo list can be used to add new items, remove finished items, upload whole lists, and save lists for future use.</p>
                         <p>
                             <a href="#" class="btn btn-primary" role="button" data-toggle="modal" data-target="#myModal2">Source</a>
-                            <a href="http://todo.dev/new_todo.php" class="btn btn-default" role="button" target="_blank">View</a>
+                            <a href="/img/todo.png" class="btn btn-default" role="button" target="_blank">Screenshot</a>
                         </p>
                         <!-- beginmodal -->
                         <div class="modal fade bs-example-modal-lg" id="myModal2" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
@@ -299,7 +299,7 @@ $list = $stmt->fetchAll(PDO::FETCH_ASSOC);
                         <p>This is a little bit of a twist on the classic whack-a-mole game. It was written using HTML, CSS, JavaScript, and jQuery.</p>
                         <p>
                             <a href="#" class="btn btn-primary" role="button" data-toggle="modal" data-target="#myModal3">Source</a>
-                            <a href="http://codeup.dev/whack.php" class="btn btn-default" role="button" target="_blank">View</a>
+                            <a href="http://ashleyfalsario.com/whack" class="btn btn-default" role="button" target="_blank">Play</a>
                         </p>
                             <!-- beginmodal -->
                             <div class="modal fade" id="myModal3" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
