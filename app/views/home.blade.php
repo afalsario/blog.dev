@@ -505,6 +505,7 @@ $list = $stmt->fetchAll(PDO::FETCH_ASSOC);
         <div class="row">
             <div class="col-sm-8 col-sm-offset-2 text-center">
                 <p class="lead">Feel free to email me, or contact me on Twitter!</p>
+                <a>a_falsario@yahoo.com</a>
              <hr>
                 <ul class="list-inline list-social">
                     <li><a href="https://twitter.com/_falsario" class="btn btn-link"><i class="fa fa-twitter fa-fw"></i> Twitter</a></li>
