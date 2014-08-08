@@ -37,6 +37,25 @@ Route::get('whack', function(){
     return View::make('whack.whack-a-mole');
 });
 
+// _____________________________________________
+
+Route::get('index', function(){
+	return View::make('newBlog.index');
+});
+
+Route::get('about', function(){
+	return View::make('newBlog.about');
+});
+Route::get('blog', function(){
+	return View::make('newBlog.blog');
+});
+
+Route::get('contact', function(){
+	return View::make('newBlog.contact');
+});
+
+
+
 
 
 
