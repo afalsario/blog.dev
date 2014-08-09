@@ -12,7 +12,7 @@
                     </h2>
                     <hr>
                 </div>
-                @foreach ($posts as $post)
+                
                 <div class="col-lg-12 text-center">
                     @if ($post->img_path)
                         <img src="{{{ $post->img_path }}}" class="img-responsive">
@@ -24,21 +24,11 @@
                         <br>
                         <small>{{{ $post->updated_at->format('F jS, Y g:i A') }}}</small>
                     </h2>
-                    <p>{{{ $post->preview() }}}</p>
-                    <a href="{{ action('PostsController@show', $post->slug) }}" class="btn btn-default btn-lg">Read More</a>
+                    <p>{{ $post->renderBody() }}</p>
+                    
                     <hr>
                 </div>
-                @endforeach
-                
-                <div class="col-lg-12 text-center">
-                    <ul class="pager">
-                        <!-- <li class="previous"><a href="#">&larr; Older</a>
-                        </li>
-                        <li class="next"><a href="#">Newer &rarr;</a>
-                        </li> -->
-                        <li>{{ $posts->links() }}</li>
-                    </ul>
-                </div>
+              
             </div>
         </div>
 
