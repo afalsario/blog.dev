@@ -45,22 +45,22 @@
                     <span class="icon-bar"></span>
                 </button>
                 <!-- navbar-brand is hidden on larger screens, but visible when the menu is collapsed -->
-                <a class="navbar-brand" href="index.html">Business Casual</a>
+                <a class="navbar-brand" href="index.html">Ashley Falsario</a>
             </div>
             <!-- Collect the nav links, forms, and other content for toggling -->
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                 <ul class="nav navbar-nav">
                     <li>
-                        <a href="index">Home</a>
+                        <a href="http://blog.dev/">Home</a>
                     </li>
                     <li>
-                        <a href="about">About</a>
+                        <a href="http://blog.dev/about">About</a>
                     </li>
                     <li>
-                        <a href="blog">Blog</a>
+                        <a href="http://blog.dev/blog">Blog</a>
                     </li>
                     <li>
-                        <a href="contact">Contact</a>
+                        <a href="http://blog.dev/contact">Contact</a>
                     </li>
                 </ul>
             </div>
@@ -75,7 +75,7 @@
         <div class="container">
             <div class="row">
                 <div class="col-lg-12 text-center">
-                    <p>Copyright &copy; Your Website 2014</p>
+                    <p>Copyright &copy; Ashley Falsario 2014</p>
                 </div>
             </div>
         </div>

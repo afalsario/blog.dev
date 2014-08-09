@@ -11,11 +11,12 @@
 |
 */
 
-Route::get('/', 'HomeController@home' );
-Route::get('login', 'HomeController@login');
-Route::get('logout', 'HomeController@logout');
-Route::post('login', 'HomeController@doLogin');
-Route::resource('posts', 'PostsController');
+// Route::get('/', 'HomeController@home' );
+// Route::get('login', 'HomeController@login');
+// Route::get('logout', 'HomeController@logout');
+// Route::post('login', 'HomeController@doLogin');
+
+Route::resource('blog', 'PostsController');
 
 Route::get('profile', 'HomeController@profile');
 
@@ -39,16 +40,14 @@ Route::get('whack', function(){
 
 // _____________________________________________
 
-Route::get('index', function(){
+Route::get('/', function(){
 	return View::make('newBlog.index');
 });
 
 Route::get('about', function(){
 	return View::make('newBlog.about');
 });
-Route::get('blog', function(){
-	return View::make('newBlog.blog');
-});
+
 
 Route::get('contact', function(){
 	return View::make('newBlog.contact');

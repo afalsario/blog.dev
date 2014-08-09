@@ -29,7 +29,8 @@ class PostsController extends \BaseController {
             $posts = Post::with('user')->orderBy('created_at', 'desc')->paginate(4);
         }
 
-        return View::make('posts.index')->with('posts', $posts);
+        // return View::make('posts.index')->with('posts', $posts);
+        return View::make('newBlog.blog')->with('posts', $posts);
     }
 
 
@@ -65,7 +66,7 @@ class PostsController extends \BaseController {
     public function show($slug)
     {
         $post = Post::findBySlug($slug);
-        return View::make('posts.show')->with('post', $post);
+        return View::make('newBlog.show')->with('post', $post);
     }
 
 
