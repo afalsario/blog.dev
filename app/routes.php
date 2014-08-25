@@ -44,8 +44,8 @@ Route::get('/', function(){
 	return View::make('newBlog.index');
 });
 
-Route::get('about', function(){
-	return View::make('newBlog.about');
+Route::get('portfolio', function(){
+	return View::make('newBlog.portfolio');
 });
 
 
