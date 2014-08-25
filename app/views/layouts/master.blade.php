@@ -54,7 +54,7 @@
                         <a href="http://blog.dev/">Home</a>
                     </li>
                     <li>
-                        <a href="http://blog.dev/about">About</a>
+                        <a href="http://blog.dev/portfolio">Portfolio</a>
                     </li>
                     <li>
                         <a href="http://blog.dev/blog">Blog</a>

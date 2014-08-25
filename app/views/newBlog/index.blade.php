@@ -18,13 +18,13 @@
                         <!-- Wrapper for slides -->
                         <div class="carousel-inner">
                             <div class="item active">
-                                <img class="img-responsive img-full" src="/img/blog-slide1.png" alt="">
+                                <img class="img-responsive img-full" src="/img/class-slide3.jpg" alt="">
                             </div>
                             <div class="item">
                                 <img class="img-responsive img-full" src="/img/art-slide2.png" alt="">
                             </div>
                             <div class="item">
-                                <img class="img-responsive img-full" src="/img/class-slide3.jpg" alt="">
+                                <img class="img-responsive img-full" src="/img/blog-slide1.png" alt="">
                             </div>
                         </div>
 
