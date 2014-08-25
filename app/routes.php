@@ -37,9 +37,9 @@ Route::get('portfolio', function(){
 });
 
 
-Route::get('contact', function(){
-	return View::make('newBlog.contact');
-});
+Route::get('contact', 'ContactController@getContact');
+
+Route::post('contact', 'ContactController@getContactForm');
 
 
 

@@ -41,31 +41,37 @@
                     </h2>
                     <hr>
                     <p>Thanks for browsing my site! If you have any questions for me, please fill out the form below. I look forward to speaking with you!</p>
-                    <form role="form">
+                    {{ Form::open(array('action' => 'ContactController@getContactForm'))}}
+
+                        <ul class='errors'>
+                            @foreach($errors->all('<li>:message</li>') as $message)
+                            {{ $message }}
+                            @endforeach
+                        </ul>
                         <div class="row">
                             <div class="form-group col-lg-4">
-                                <label>Name</label>
-                                <input type="text" class="form-control">
+                                {{ Form::label('name', 'Name') }}
+                                {{ Form::text('name', Input::old('first_name'), ['class' => 'form-control']) }}
                             </div>
                             <div class="form-group col-lg-4">
-                                <label>Email Address</label>
-                                <input type="email" class="form-control">
+                                {{ Form::label('email', 'Email Address') }}
+                                {{ Form::email('email', Input::old('email'), ['class' => 'form-control']) }}
                             </div>
                             <div class="form-group col-lg-4">
-                                <label>Phone Number</label>
-                                <input type="tel" class="form-control">
+                                {{ Form::label('phone', 'Phone Number') }}
+                                {{ Form::text('phone', Input::old('phone'), ['class' => 'form-control']) }}
                             </div>
                             <div class="clearfix"></div>
                             <div class="form-group col-lg-12">
-                                <label>Message</label>
-                                <textarea class="form-control" rows="6"></textarea>
+                                {{ Form::label('message', 'Message') }}
+                                {{ Form::textarea('message', Input::old('message'), ['class' => 'form-control', 'rows' => '6'])}}
                             </div>
                             <div class="form-group col-lg-12">
-                                <input type="hidden" name="save" value="contact">
-                                <button type="submit" class="btn btn-default">Submit</button>
+                                {{ Form::reset('Reset', ['class' => 'btn btn-default']) }}
+                                {{ Form::submit('Submit', ['class' => 'btn btn-default']) }}
                             </div>
                         </div>
-                    </form>
+                    {{ Form::close() }}
                 </div>
             </div>
         </div>
