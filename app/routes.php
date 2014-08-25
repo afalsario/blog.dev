@@ -16,23 +16,11 @@
 // Route::get('logout', 'HomeController@logout');
 // Route::post('login', 'HomeController@doLogin');
 
-Route::resource('blog', 'PostsController');
+// Route::resource('blog', 'PostsController');
 
-Route::get('profile', 'HomeController@profile');
+// Route::get('profile', 'HomeController@profile');
 
-Route::get('/sayHello/{name}', 'HomeController@sayHello');
-
-Route::get('/rolldice/{guess}', function($guess){
-    $rand_num = rand(1,6);
-
-    $data = array(
-        'rand_num' => $rand_num,
-        'guess' => $guess
-    );
-
-    return View::make('temp.roll-dice')->with($data);
-
-});
+// Route::get('/sayHello/{name}', 'HomeController@sayHello');
 
 Route::get('whack', function(){
     return View::make('whack.whack-a-mole');

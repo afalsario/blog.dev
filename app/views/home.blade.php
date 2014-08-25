@@ -77,7 +77,7 @@
                     <img src="/img/address.png" alt="Address Book">
                     <div class="caption">
                         <h3>Address Book</h3>
-                        <p>This ToDo list can be used to add new items, remove finished items, upload whole lists, and save lists for future use.</p>
+                        <p>This application can be used to keep track of contacts by name, phone, number, and address</p>
                         <p>
                             <a href="#" class="btn btn-primary" role="button" data-toggle="modal" data-target="#myModal1">Source</a>
                             <a href="/img/address.png" class="btn btn-default" role="button" target="_blank">Screenshot</a>

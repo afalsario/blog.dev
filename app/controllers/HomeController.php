@@ -15,21 +15,8 @@ class HomeController extends BaseController {
     |
     */
 
-    public function showWelcome()
-    {
-        return Redirect::action('HomeController@sayHello', ['Codeup']);
-    }
-
     public function home(){
         return View::make('home');
-    }
-
-    public function sayHello($name)
-    {
-        $data = array(
-            'name' => $name
-        );
-        return View::make('temp.my-first-view')->with($data);
     }
 
     public function login()

@@ -40,7 +40,7 @@
                         <strong>form</strong>
                     </h2>
                     <hr>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Fugiat, vitae, distinctio, possimus repudiandae cupiditate ipsum excepturi dicta neque eaque voluptates tempora veniam esse earum sapiente optio deleniti consequuntur eos voluptatem.</p>
+                    <p>Thanks for browsing my site! If you have any questions for me, please fill out the form below. I look forward to speaking with you!</p>
                     <form role="form">
                         <div class="row">
                             <div class="form-group col-lg-4">
