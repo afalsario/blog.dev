@@ -55,16 +55,16 @@
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                 <ul class="nav navbar-nav">
                     <li>
-                        <a href="http://blog.dev/">Home</a>
+                        <a href="http://ashleyfalsario.com/">Home</a>
                     </li>
                     <li>
-                        <a href="http://blog.dev/portfolio">Portfolio</a>
+                        <a href="http://ashleyfalsario.com/portfolio">Portfolio</a>
                     </li>
                     <li>
-                        <a href="http://blog.dev/blog">Blog</a>
+                        <a href="http://ashleyfalsario.com/blog">Blog</a>
                     </li>
                     <li>
-                        <a href="http://blog.dev/contact">Contact</a>
+                        <a href="http://ashleyfalsario.com/contact">Contact</a>
                     </li>
                 </ul>
             </div>
