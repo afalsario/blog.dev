@@ -30,7 +30,7 @@ class ContactController extends BaseController {
 				$message->to($email)->subject('contact request');
 			});
 
-			return View::make('newblog.contact');
+			return View::make('newBlog.contact');
 		} else {
 			return Redirect::back()->withErrors($validator);
 		}
