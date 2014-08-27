@@ -39,7 +39,7 @@ Route::get('portfolio', function(){
 
 Route::get('contact', 'ContactController@getContact');
 
-Route::post('contact', 'ContactController@getContactForm');
+Route::post('contact_request', 'ContactController@getContactForm');
 
 
 

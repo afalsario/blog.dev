@@ -22,10 +22,12 @@ class ContactController extends BaseController {
 		$validator = Validator::make($data, $rules);
 
 		if($validator->passes()){
+
 			Mail::send('emails.hello', $data, function($message) use ($data)
 			{
+				$email = trim('a_falsario@yahoo.com');
 				$message->from($data['email'], $data['name']);
-				$message->to('a_falsario@yahoo.com', 'Ashley Falsario')->subject('contact request');
+				$message->to($email)->subject('contact request');
 			});
 
 			return View::make('newblog.contact');
