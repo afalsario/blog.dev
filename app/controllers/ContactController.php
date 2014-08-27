@@ -27,7 +27,7 @@ class ContactController extends BaseController {
 			{
 				$email = trim('a_falsario@yahoo.com');
 				$message->from($data['email'], $data['name']);
-				$message->to($email)->subject('contact request');
+				$message->to($email)->subject('MYSITE-Contact Form1!');
 			});
 
 			return View::make('newBlog.contact');
