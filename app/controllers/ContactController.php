@@ -32,7 +32,7 @@ class ContactController extends BaseController {
 
 			return View::make('newblog.contact');
 		} else {
-			return Redirect::to('contact')->withErrors($validator);
+			return Redirect::back()->withErrors($validator);
 		}
 	}
 
