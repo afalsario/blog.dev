@@ -6,11 +6,21 @@ $phone = Input::get('phone');
 $message = Input::get('message');
 
 ?>
-<h1>We've got mail!</h1>
+<!DOCTYPE html>
+<html lang="en-US">
+    <head>
+        <meta charset="utf-8">
+    </head>
+    <body>
+        <h2>We've got mail!</h2>
 
-<p>
-Name: <?php echo ($name); ?> <br>
-Email: <?php echo ($email); ?> <br>
-Phone Number: <?php echo ($phone); ?> <br>
-Message: <?php echo ($message); ?> <br>
-</p>
+        <div>
+            <p>
+                Name: <?php echo ($name); ?> <br>
+                Email: <?php echo ($email); ?> <br>
+                Phone Number: <?php echo ($phone); ?> <br>
+                Message: <?php echo ($message); ?> <br>
+            </p>
+        </div>
+    </body>
+</html>
