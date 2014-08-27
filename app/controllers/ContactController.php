@@ -15,7 +15,6 @@ class ContactController extends BaseController {
 		$rules = array (
 			'name' => 'required',
 			'email' => 'required',
-			'phone' =>'required|min:10',
 			'message' =>'required'
 			);
 
@@ -29,9 +28,10 @@ class ContactController extends BaseController {
 				$message->from($data['email'], $data['name']);
 				$message->to($email)->subject('MYSITE-Contact Form1!');
 			});
-
-			return View::make('newBlog.contact');
+			Session::flash('success', 'Your message was sent!');
+			return Redirect::to('contact');
 		} else {
+			Session::flash('fail', 'Please enter in all required data!');
 			return Redirect::back()->withErrors($validator);
 		}
 	}

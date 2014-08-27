@@ -11,6 +11,9 @@
 
     <title>Ashley Falsario</title>
 
+    <!-- JavaScript CDN -->
+    <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+
     <!-- Bootstrap Core CSS -->
     <link href="/css/bootstrap.min.css" rel="stylesheet">
 
@@ -34,6 +37,17 @@
     </style>
 </head>
 <body>
+
+    @if(Session::has('success'))
+        <div class="alert alert-success" role="alert">
+            <h3>{{ Session::get('success') }}</h3>
+        </div>
+    @elseif(Session::has('fail'))
+        <div class="alert alert-danger" role="alert">
+            <h3>{{ Session::get('fail') }}</h3>
+        </div>
+    @endif
+
     <div class="brand">Ashley Falsario</div>
     <div class="address-bar">782 Crestway Drive | San Antonio, TX 78239 | 210.319.8669</div>
 

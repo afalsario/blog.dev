@@ -50,11 +50,11 @@
                         </ul>
                         <div class="row">
                             <div class="form-group col-lg-4">
-                                {{ Form::label('name', 'Name') }}
+                                {{ Form::label('name', 'Name') }} <small>required*</small>
                                 {{ Form::text('name', Input::old('first_name'), ['class' => 'form-control']) }}
                             </div>
                             <div class="form-group col-lg-4">
-                                {{ Form::label('email', 'Email Address') }}
+                                {{ Form::label('email', 'Email Address') }} <small>required*</small>
                                 {{ Form::email('email', Input::old('email'), ['class' => 'form-control']) }}
                             </div>
                             <div class="form-group col-lg-4">
@@ -63,7 +63,7 @@
                             </div>
                             <div class="clearfix"></div>
                             <div class="form-group col-lg-12">
-                                {{ Form::label('message', 'Message') }}
+                                {{ Form::label('message', 'Message') }} <small>required*</small>
                                 {{ Form::textarea('message', Input::old('message'), ['class' => 'form-control', 'rows' => '6'])}}
                             </div>
                             <div class="form-group col-lg-12">
