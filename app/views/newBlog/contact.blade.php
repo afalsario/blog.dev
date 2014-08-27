@@ -41,7 +41,7 @@
                     </h2>
                     <hr>
                     <p>Thanks for browsing my site! If you have any questions for me, please fill out the form below. I look forward to speaking with you!</p>
-                    {{ Form::open(array('url' => 'contact_request'))}}
+                    {{ Form::open(array('action' => 'ContactController@getContactForm'))}}
 
                         <ul class='errors'>
                             @foreach($errors->all('<li>:message</li>') as $message)
