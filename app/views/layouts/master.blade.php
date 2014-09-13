@@ -49,7 +49,7 @@
     @endif
 
     <div class="brand">Ashley Falsario</div>
-    <div class="address-bar">782 Crestway Drive | San Antonio, TX 78239 | 210.319.8669</div>
+    <!-- <div class="address-bar">782 Crestway Drive | San Antonio, TX 78239 | 210.319.8669</div> -->
 
     <!-- Navigation -->
     <nav class="navbar navbar-default" role="navigation">

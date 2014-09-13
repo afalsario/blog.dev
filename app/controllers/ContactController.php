@@ -32,7 +32,7 @@ class ContactController extends BaseController {
 			return Redirect::to('contact');
 		} else {
 			Session::flash('fail', 'Please enter in all required data!');
-			return Redirect::back()->withErrors($validator);
+			return Redirect::back()->withErrors($validator)->withInput();
 		}
 	}
 

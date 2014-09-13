@@ -23,10 +23,10 @@
                     <p>Email:
                         <strong><a href="mailto:a_falsario@yahoo.com">a_falsario@yahoo.com</a></strong>
                     </p>
-                    <p>Address:
+                    <!-- <p>Address:
                         <strong>782 Crestway Drive
                             <br>San Antonio, TX 78239</strong>
-                    </p>
+                    </p> -->
                 </div>
                 <div class="clearfix"></div>
             </div>
