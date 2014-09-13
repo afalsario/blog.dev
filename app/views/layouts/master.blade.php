@@ -60,7 +60,7 @@
                     <span class="sr-only">Toggle navigation</span>
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
+                    <!-- <span class="icon-bar"></span> -->
                 </button>
                 <!-- navbar-brand is hidden on larger screens, but visible when the menu is collapsed -->
                 <a class="navbar-brand" href="index.html">Ashley Falsario</a>
@@ -74,9 +74,9 @@
                     <li>
                         <a href="http://ashleyfalsario.com/portfolio">Portfolio</a>
                     </li>
-                    <li>
+                    <!-- <li>
                         <a href="http://ashleyfalsario.com/blog">Blog</a>
-                    </li>
+                    </li> -->
                     <li>
                         <a href="http://ashleyfalsario.com/contact">Contact</a>
                     </li>
